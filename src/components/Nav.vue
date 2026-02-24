@@ -1,5 +1,4 @@
 <script setup>
-import { defineProps } from 'vue';
 const emit = defineEmits(['emitLogout']);
 const currentUser = localStorage.getItem('username');
 
