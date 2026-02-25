@@ -31,6 +31,10 @@ function handleLogout() {
         <Nav @emitLogout="handleLogout" :showHomeLink="true" :showLoginLogoutLink="true" :loginLogoutText="'Log out'" />
         <div class="home-view">
             <h1>Welcome {{ loggedInUser.username }}!</h1>
+            <div class="ee hidden">
+                <div class="six">6</div>
+                <div class="seven">7</div>
+            </div>
         </div>
         <Footer />
     </main>
@@ -74,5 +78,44 @@ nav {
     background-color: gray;
     color: #fff;
     transition: background-color .25s ease, color .25s ease;
+}
+
+.ee {
+    display: flex;
+    gap: 20px;
+    font-size: 267px;
+    font-weight: 700;
+    font-family: Arial Black, sans-serif;
+    align-self: center;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.six,
+.seven {
+    display: inline-block;
+    animation: animation .4s infinite cubic-bezier(.68, -.55, .27, 1.55);
+}
+
+.seven {
+    animation-delay: .1s;
+    color: #ff4757;
+}
+
+@keyframes animation {
+    0%,
+    100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    30% {
+        transform: translateY(-40px) rotate(-10deg) scale(1.1);
+    }
+
+    70% {
+        transform: translateY(10px) rotate(5deg) scale(.9);
+    }
 }
 </style>
