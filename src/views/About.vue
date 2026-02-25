@@ -12,7 +12,7 @@ function handleLogout() {
 
 <template>
     <main>
-        <Nav @emitLogout="handleLogout" :showHomeLink="isLoggedIn !== ''" :showLoginLogoutLink="true" :loginLogoutText="isLoggedIn ? 'Log out' : 'Log in'" />
+        <Nav @emitLogout="handleLogout" :showHomeLink="isLoggedIn === ''" :showLoginLogoutLink="true" :loginLogoutText="isLoggedIn ? 'Log out' : 'Log in'" />
         <div class="about-view">
             <h1>About Our App ...</h1>
         </div>

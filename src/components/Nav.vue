@@ -17,7 +17,7 @@ function handleClick() {
 
 <template>
     <nav>
-        <RouterLink class="link" :class="{ hidden: !showHomeLink}" to="/home">Home</RouterLink>
+        <RouterLink class='link' :class="{ hidden: showHomeLink}" to="/home">Home</RouterLink>
         <!--change v-if to appear when user is logged in (username exists in localstorage)-->
         <RouterLink class='link' :class="{ hidden: !showLoginLogoutLink }" to="/login">
             <span @click="handleClick">{{ loginLogoutText }}</span>

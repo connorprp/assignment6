@@ -37,7 +37,7 @@ function login() {
 
 <template>
     <main>
-        <Nav :showHomeLink="isLoggedIn !== ''" :showLoginLogoutLink="false"/>
+        <Nav :showHomeLink="isLoggedIn === '' || isLoggedIn === null" :showLoginLogoutLink="false"/>
         <div class="login-wrapper">
             <div class="login-card">
                 <h1>Let's Go!</h1>

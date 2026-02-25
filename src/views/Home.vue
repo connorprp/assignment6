@@ -28,7 +28,7 @@ function handleLogout() {
 
 <template>
     <main>
-        <Nav @emitLogout="handleLogout" :showHomeLink="true" :showLoginLogoutLink="true" :loginLogoutText="'Log out'" />
+        <Nav @emitLogout="handleLogout" :showHomeLink="false" :showLoginLogoutLink="true" :loginLogoutText="'Log out'" />
         <div class="home-view">
             <h1>Welcome {{ loggedInUser.username.slice(0,1).toUpperCase() + loggedInUser.username.slice(1,loggedInUser.username.length)}}!</h1>
             <div class="ee hidden">
