@@ -8,22 +8,6 @@ import Nav from '../components/Nav.vue';
 const userStore = useUsersStore();
 const user = ref(new User())
 
-
-
-//Get users and store in users ref
-// for (const message of messagesStore.messages) {
-//     const { username, first_name, last_name } = message;
-//     const exists = users.value.some(user => user.username === username);
-
-//     if (!exists) {
-//         users.value.push({
-//             username,
-//             first_name,
-//             last_name
-//         });
-//     }
-// }
-
 const isLoggedIn = localStorage.getItem('username');
 
 function login() {
@@ -37,7 +21,7 @@ function login() {
 
 <template>
     <main>
-        <Nav :showHomeLink="isLoggedIn === '' || isLoggedIn === null" :showLoginLogoutLink="false"/>
+        <Nav :showHomeLink="isLoggedIn === '' || isLoggedIn === null" :showLoginLogoutLink="false" />
         <div class="login-wrapper">
             <div class="login-card">
                 <h1>Let's Go!</h1>
@@ -49,6 +33,22 @@ function login() {
                 <button class="button" @click="login">
                     Log in
                 </button>
+            </div>
+            <div class="requirements">
+                <span>Username</span>
+                <ul>
+                    <li>Must have at least 5 characters</li>
+                    <li>Must begin with a letter</li>
+                    <li>Can only contain letters and numbers</li>
+                </ul>
+                <span>Password</span>
+                <ul>
+                    <li>Must have at least 8 characters</li>
+                    <li>Must have 1 uppercase character</li>
+                    <li>Must have 1 lowercase character</li>
+                    <li>Must have 1 number</li>
+                    <li>Must have 1 special character</li>
+                </ul>
             </div>
         </div>
         <Footer />
@@ -65,6 +65,7 @@ main {
     flex-direction: column;
     overflow: hidden;
 }
+
 .login-wrapper {
     flex: 1;
     background-color: #efeded;
@@ -72,6 +73,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: start;
+    gap: 20px;
 }
 
 .login-card {
@@ -82,6 +84,23 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 10px;
+}
+
+.requirements {
+    align-self: center;
+    color: #c70d0d;
+    font-size: 12px;
+    width: 200px;
+    transition: width 1s linear;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.requirements li {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .button {
