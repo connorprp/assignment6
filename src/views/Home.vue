@@ -74,12 +74,6 @@ nav {
     color: #000;
 }
 
-.router-link-active {
-    background-color: gray;
-    color: #fff;
-    transition: background-color .25s ease, color .25s ease;
-}
-
 .ee {
     display: flex;
     gap: 20px;
