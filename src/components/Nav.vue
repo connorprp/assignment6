@@ -18,7 +18,6 @@ function handleClick() {
 <template>
     <nav>
         <RouterLink class='link' :class="{ hidden: showHomeLink}" to="/home">Home</RouterLink>
-        <!--change v-if to appear when user is logged in (username exists in localstorage)-->
         <RouterLink class='link' :class="{ hidden: !showLoginLogoutLink }" to="/login">
             <span @click="handleClick">{{ loginLogoutText }}</span>
         </RouterLink>
@@ -38,6 +37,7 @@ nav {
     padding: 5px 10px;
     border-radius: 999px;
     color: #000;
+    background-color: transparent;
 }
 
 .hidden {
@@ -47,6 +47,6 @@ nav {
 .router-link-active {
     background-color: gray;
     color: #fff;
-    transition: background-color .25s ease-in, color 0s ease-in .25s;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 </style>

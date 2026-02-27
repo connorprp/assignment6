@@ -16,13 +16,11 @@ onMounted(() => {
     if (loggedInUser.value.username === '') {
         router.push("/login")
     }
-    console.log(loggedInUser.value)
 })
 
 
 function handleLogout() {
     localStorage.setItem("username", '');
-    console.log("Logged out")
 }
 </script>
 
