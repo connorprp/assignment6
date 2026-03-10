@@ -1,6 +1,5 @@
 <script setup>
 const emit = defineEmits(['emitLogout']);
-const currentUser = localStorage.getItem('username');
 
 const props = defineProps({
     showLoginLogoutLink: Boolean,

@@ -26,9 +26,11 @@ function handleLogout() {
 
 <template>
     <main>
-        <Nav @emitLogout="handleLogout" :showHomeLink="false" :showLoginLogoutLink="true" :loginLogoutText="'Log out'" />
-        <div class="home-view">
-            <h1>Welcome {{ loggedInUser.username.slice(0,1).toUpperCase() + loggedInUser.username.slice(1,loggedInUser.username.length)}}!</h1>
+        <Nav @emitLogout="handleLogout" :showHomeLink="false" :showLoginLogoutLink="true"
+            :loginLogoutText="'Log out'" />
+        <div class="home-view view">
+            <h1>Welcome {{ loggedInUser.username.slice(0, 1).toUpperCase() +
+                loggedInUser.username.slice(1, loggedInUser.username.length)}}!</h1>
             <div class="ee hidden">
                 <div class="six">6</div>
                 <div class="seven">7</div>
@@ -49,6 +51,26 @@ main {
     overflow: hidden;
 }
 
+.view {
+    position: relative;
+}
+
+.view:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background-image: url(/starfish.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    filter: grayscale(100%);
+    opacity: .05;
+    z-index: -1;
+}
+
 nav {
     background-color: #dcdcdc;
     padding: 10px;
@@ -60,6 +82,7 @@ nav {
     box-sizing: border-box;
     padding: 20px;
     background-color: #efeded;
+    opacity: 97%;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -75,7 +98,7 @@ nav {
 .ee {
     display: flex;
     gap: 20px;
-    font-size: 267px;
+    font-size: 10rem;
     font-weight: 700;
     font-family: Arial Black, sans-serif;
     align-self: center;
@@ -97,6 +120,7 @@ nav {
 }
 
 @keyframes animation {
+
     0%,
     100% {
         transform: translateY(0) rotate(0);
